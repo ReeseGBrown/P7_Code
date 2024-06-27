@@ -1,0 +1,26 @@
+.groupomania-banner {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid rgb(38, 45, 110);
+    
+}
+.groupomania-banner-logo {
+    color: #e05e5e;
+    
+    height: 100px;
+    width: fit-content;
+}
+.signupLogin {
+    display: flex;
+    justify-content: right;
+    align-items:start;
+    
+    width: 30%;
+    
+}
+.signupLogin p {
+    
+    width: fit-content;
+    height: fit-content;
+    margin-right: 10px;
+}

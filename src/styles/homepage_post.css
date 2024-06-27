@@ -1,0 +1,42 @@
+.post_card {
+    display: flex;
+    
+    flex-direction: column;
+    width: 756px;
+    /* background-color: rgb(228, 91, 91); */
+    background-color: rgb(39, 73, 146);
+    margin-bottom: 5px;
+    padding-left: 10px;
+    
+    border-radius: 10px;
+    
+    
+}
+
+.post_card h2, .post_card h4, .post_card p {
+    color: white;
+    
+    width: fit-content;
+    margin-right: 10px;
+}
+
+.post_card_bottom {
+    display: flex;
+    justify-content: space-between;
+    width: 20%;
+    
+}
+.post_card_bottom p {
+    background-color: rgb(49, 90, 180);
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 20px;
+}
+.test {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    
+}
