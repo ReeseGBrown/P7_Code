@@ -1,9 +1,10 @@
 import '../styles/sort_create.css'
+import { Link } from 'react-router-dom'
 function Sort () {
     return (
         <div className = 'sort_create'>
             <p>Sort By</p>
-            <p>Create a post</p>
+            <Link to="/create">Create a Post</Link>
         </div>
     )
 }

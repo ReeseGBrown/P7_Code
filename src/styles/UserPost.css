@@ -1,0 +1,23 @@
+.userPostCard {
+    display: flex;
+    flex-direction: column;
+    width: 850px;
+    /* background-color: rgb(228, 91, 91); */
+    background-color: rgb(39, 73, 146);
+    margin-bottom: 5px;
+    margin-top: 10px;
+    padding-left: 10px;
+    
+    border-radius: 10px;
+}
+.userPostCard h2, .userPostCard h4, .post_card p {
+    color: white;
+    
+    width: fit-content;
+    margin-right: 10px;
+}
+hr {
+    height:0px;
+    color: gray;
+    width: 100%;
+}

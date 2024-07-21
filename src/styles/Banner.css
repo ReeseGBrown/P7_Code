@@ -18,8 +18,9 @@
     width: 30%;
     
 }
-.signupLogin p {
-    
+.signupLogin a {
+    text-decoration: none;
+    color: black;
     width: fit-content;
     height: fit-content;
     margin-right: 10px;

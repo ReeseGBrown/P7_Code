@@ -1,0 +1,37 @@
+.createComponent {
+    display: flex;
+    width: 900px;
+    height: 700px;
+    flex-direction: column;
+    align-items: left;
+    /* background-color: rgb(228, 91, 91); */
+    background-color: rgb(39, 73, 146);
+    border-radius: 10px;
+    margin-top: 10px;
+    
+    
+}
+.titleComponent, .descriptionComponent {
+    margin-left:10px;
+    margin-top: 10px;
+    width: 100%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.descriptionComponent {
+    height: 100%;
+}
+#title {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 80%;
+    margin-left: 10px;
+    font-size: large;
+}
+#description {
+    width: 90%;
+    height: 90%;
+    margin-left: 10px;
+    resize: vertical;
+    font-size: large;
+}

@@ -2,7 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './components/App';
+import Create from './Pages/Create';
 import reportWebVitals from './reportWebVitals';
+import {BrowserRouter as Router, Route} from 'react-router-dom'
+import Header from './components/Header'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
