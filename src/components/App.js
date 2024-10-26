@@ -19,7 +19,7 @@ function App() {
         </Route>
         <Route path= "login" element = {<Login />}>
         </Route>
-        <Route path = "userPost" element = {<UserPost/>}>
+        <Route path = "userPost" element = {<UserPost />}>
         </Route>
       </Routes>
     </Router>
@@ -30,5 +30,7 @@ function App() {
 // Font Awesome Icons
 // figma
 // nest Routes to add components on already rendered screen
+
+
 
 export default App;

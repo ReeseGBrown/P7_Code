@@ -8,11 +8,6 @@ function Home () {
             
             <Sort />
             <Post />
-            <Post />
-            <Post />
-            <Post />
-            <Post />
-            <Post />
         </div>
     )
 }

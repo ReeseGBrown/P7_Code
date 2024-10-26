@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 function Sort () {
     return (
         <div className = 'sort_create'>
-            <p>Sort By</p>
             <Link to="/create">Create a Post</Link>
         </div>
     )

@@ -9,7 +9,6 @@ function Post () {
             {/* this is gonna be an unordered list w/ key props*/} 
             <div className = 'post_card_bottom'>
                 <p>likes</p>
-                <p>comments</p>
             </div>
         
         </div>        
