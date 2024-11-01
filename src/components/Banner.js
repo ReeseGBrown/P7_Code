@@ -6,7 +6,7 @@ function Banner() {
     <div className = 'groupomania-banner'>
         <Link to="/"><img src={logo} alt='groupomania logo' className = 'groupomania-banner-logo'/></Link>
         <div className = 'signupLogin'>
-            <Link to="login">signup</Link>
+            <Link to="signup">signup</Link>
             <Link to="login">login</Link>
         </div>
     </div>

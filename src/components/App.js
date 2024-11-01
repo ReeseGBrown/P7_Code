@@ -6,6 +6,7 @@ import Create from '../Pages/Create';
 import Home from '../Pages/Home';
 import Login from '../Pages/Login';
 import UserPost from '../Pages/UserPost';
+import Signup from '../Pages/Signup';
 function App() {
   return (
     <Router>
@@ -18,6 +19,8 @@ function App() {
             </Route>
         </Route>
         <Route path= "login" element = {<Login />}>
+        </Route>
+        <Route path= "signup" element = {<Signup />}>
         </Route>
         <Route path = "userPost" element = {<UserPost />}>
         </Route>
