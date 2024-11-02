@@ -22,14 +22,7 @@ function SignupForm () {
         }
         testGetter()
      }, [])
-     let testObj = testData[0];
-     
-    let testPOST = {
-        email: "test",
-        firstname: "firstname",
-        lastname: "lastname",
-        password: "password"
-    }*/
+     */
     const submitFunction = (e) => {
         e.preventDefault();
         fetch('http://localhost:4000/api/auth/signup', {
