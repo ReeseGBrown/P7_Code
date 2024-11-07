@@ -31,7 +31,7 @@ function UserPost() {
             <ul>
                 
                     <div key={testData.post_id}>
-                        <SinglePost post_title={testData.post_title} post_content={testData.post_content} />
+                        <SinglePost post_id = {testData.post_id} post_title={testData.post_title} post_content={testData.post_content} />
                     </div>
 
             </ul>

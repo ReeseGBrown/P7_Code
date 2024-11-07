@@ -7,6 +7,7 @@ import Home from '../Pages/Home';
 import Login from '../Pages/Login';
 import UserPost from '../Pages/UserPost';
 import Signup from '../Pages/Signup';
+import Update from '../Pages/Update';
 function App() {
   return (
     <Router>
@@ -18,12 +19,15 @@ function App() {
             <Route path="new" element = {<Banner />}>
             </Route>
         </Route>
+        <Route path = "update/:id" element = {<Update />}>
+        </Route>
         <Route path= "login" element = {<Login />}>
         </Route>
         <Route path= "signup" element = {<Signup />}>
         </Route>
         <Route path = "userPost/:id" element = {<UserPost />}>
         </Route>
+        
       </Routes>
     </Router>
   )

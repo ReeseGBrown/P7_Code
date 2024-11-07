@@ -1,16 +1,37 @@
-import { Outlet } from 'react-router-dom'
 import '../styles/Create.css'
 import '../styles/homepage_post.css'
 import { useState, useEffect } from 'react'
-function Create() {
+import { useParams } from 'react-router-dom'
+
+function Update() {
     const [postTitle, setPostTitle] = useState("");
     const [postContent, setPostContent] = useState("");
     const [testData, setTestData] = useState({});
-    
+    const { id } = useParams();
+
+    useEffect(() => {
+        async function testGetter() {
+            try {
+                const response = await fetch("http://localhost:4000/api/posts/" + id)
+                const data = await response.json()
+                //console.log("data");
+                //console.log(data);
+                setTestData(data);
+                //console.log("testData");
+                //console.log(testData);
+            }
+            catch(err) {
+                console.log("err");
+            }
+        }
+        testGetter()
+        //console.log("testData " + testData[0]);
+     }, [])
+
     const submitFunction = (e) => {
         e.preventDefault();
-        fetch('http://localhost:4000/api/posts/', {
-            method: 'POST',
+        fetch('http://localhost:4000/api/posts/' + id, {
+            method: 'PUT',
             headers: {
             'Content-Type': 'application/json',
             },
@@ -27,10 +48,10 @@ function Create() {
         <div className = "test">
             <form className = "createComponent" onSubmit={submitFunction}>
                 <div className = "titleComponent">
-                    <input id="title" type = "text" name="postTitle" value={postTitle} onChange={(e) => setPostTitle(e.target.value)}/>
+                    <input id="title" type = "text" name="postTitle" defaultValue={testData.post_title} onChange={(e) => setPostTitle(e.target.value)}/>
                 </div>
                 <div className = "descriptionComponent">
-                    <textarea id="description" type = "text" name="postContent" value={postContent} onChange={(e) => setPostContent(e.target.value)}/>
+                    <textarea id="description" type = "text" name="postContent" defaultValue={testData.post_content} onChange={(e) => setPostContent(e.target.value)}/>
                 </div>
                 <div className='post_card_bottom'>
                 <button type="submit">Submit</button>
@@ -41,4 +62,4 @@ function Create() {
     )
 }
 
-export default Create;
+export default Update;

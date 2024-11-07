@@ -1,5 +1,18 @@
 import '../styles/homepage_post.css'
 function SinglePost ({ post_id, post_title, post_content}) {
+    
+    const submitFunction = (e) => {
+        e.preventDefault();
+        fetch('http://localhost:4000/api/posts/' + post_id , {
+            method: 'DELETE',
+            headers: {
+            'Content-Type': 'application/json',
+            }
+        }).then((res) => res.json())
+      .catch((err) => console.log('error submitting'))
+        
+    } 
+    
     return (
         <li className = 'post_card'>
             <h4>userName</h4>
@@ -8,6 +21,7 @@ function SinglePost ({ post_id, post_title, post_content}) {
             {/* this is gonna be an unordered list w/ key props*/} 
             <div className = 'post_card_bottom'>
                 <p>likes</p>
+                <button type="submit" onClick={submitFunction}>Delete</button>
             </div>
         
         </li>        
