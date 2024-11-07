@@ -11,7 +11,7 @@ function Home () {
             try {
                 const response = await fetch("http://localhost:4000/api/posts/")
                 const data = await response.json()
-                console.log(data);
+                //console.log(data);
                 setTestData(data);
             }
             catch(err) {
@@ -19,7 +19,7 @@ function Home () {
             }
         }
         testGetter()
-        console.log(testData.length);
+        //console.log("leng " + testData.length);
      }, [])
 
     return (
@@ -29,7 +29,7 @@ function Home () {
             <ul>
                 {testData.length > 0 && testData.map(({post_id, post_title, post_content}) => (
                     <div key={post_id}>
-                        <Post post_title={post_title} post_content={post_content} />
+                        <Post post_id = {post_id} post_title={post_title} post_content={post_content} />
                     </div>
 
                     

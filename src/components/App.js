@@ -22,7 +22,7 @@ function App() {
         </Route>
         <Route path= "signup" element = {<Signup />}>
         </Route>
-        <Route path = "userPost" element = {<UserPost />}>
+        <Route path = "userPost/:id" element = {<UserPost />}>
         </Route>
       </Routes>
     </Router>
