@@ -1,4 +1,5 @@
 import '../styles/homepage_post.css'
+import { Link } from 'react-router-dom'
 function SinglePost ({ post_id, post_title, post_content}) {
     
     const submitFunction = (e) => {
@@ -21,6 +22,7 @@ function SinglePost ({ post_id, post_title, post_content}) {
             {/* this is gonna be an unordered list w/ key props*/} 
             <div className = 'post_card_bottom'>
                 <p>likes</p>
+                <Link to ={'/update/' + post_id}><button>Edit</button></Link>
                 <button type="submit" onClick={submitFunction}>Delete</button>
             </div>
         

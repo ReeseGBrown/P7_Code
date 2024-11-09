@@ -1,12 +1,18 @@
 import '../styles/homepage_post.css';
 import '../styles/UserPost.css';
+import '../styles/comment.css';
+
 import SinglePost from '../components/SinglePost'
+import Comment from '../components/Comment'
+import CommentForm from '../components/CommentForm'
+
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 
 function UserPost() {
     const [testData, setTestData] = useState({});
     const { id } = useParams();
+    const [commentData, setCommentData] = useState({});
 
     useEffect(() => {
         async function testGetter() {
@@ -26,6 +32,27 @@ function UserPost() {
         testGetter()
         //console.log("testData " + testData[0]);
      }, [])
+
+     useEffect(() => {
+        async function commentGetter() {
+            try {
+                const response = await fetch("http://localhost:4000/api/comment/" + id)
+                const data = await response.json()
+                //console.log("data");
+                //console.log(data);
+                setCommentData(data);
+                //console.log("CommentData");
+                //console.log(commentData);
+                //console.log("CommentData content");
+                //console.log(commentData.comment_content);
+            }
+            catch(err) {
+                console.log("err");
+            }
+        }
+        commentGetter()
+        //console.log("testData " + testData[0]);
+     }, [])
     return (
        <div>
             <ul>
@@ -35,6 +62,17 @@ function UserPost() {
                     </div>
 
             </ul>
+            <CommentForm />
+            <ul>
+                {commentData.length > 0 && commentData.map(({comment_id, comment_content}) => (
+                    <div key={comment_id}>
+                        <Comment comment_id = {comment_id} comment_content={comment_content} />
+                    </div>
+
+                    
+                ))}
+            </ul>
+            
        </div>
     )
 }
