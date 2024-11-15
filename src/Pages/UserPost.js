@@ -10,20 +10,32 @@ import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 
 function UserPost() {
+    const testToken = localStorage.getItem("token");
     const [testData, setTestData] = useState({});
     const { id } = useParams();
     const [commentData, setCommentData] = useState({});
+    const [isPostUser, setPostUser] = useState({});
 
     useEffect(() => {
         async function testGetter() {
             try {
-                const response = await fetch("http://localhost:4000/api/posts/" + id)
+                const response = await fetch("http://localhost:4000/api/posts/" + id, {
+                    headers: {
+                        'Authorization': "Bearer" + " " + testToken,
+                        
+                        }
+                })
                 const data = await response.json()
-                //console.log("data");
-                //console.log(data);
-                setTestData(data);
-                //console.log("testData");
+                console.log("data");
+                console.log(data);
+                setTestData(data[0]);
+                setPostUser(data[1]);
+                
+               // console.log("testData");
                 //console.log(testData);
+                //console.log("post user");
+                //console.log(isPostUser);
+                
             }
             catch(err) {
                 console.log("err");
@@ -58,7 +70,7 @@ function UserPost() {
             <ul>
                 
                     <div key={testData.post_id}>
-                        <SinglePost post_id = {testData.post_id} post_title={testData.post_title} post_content={testData.post_content} />
+                        <SinglePost auth_user = {isPostUser.testBool}  user_id = {testData.user_id} post_id = {testData.post_id} post_title={testData.post_title} post_content={testData.post_content} />
                     </div>
 
             </ul>

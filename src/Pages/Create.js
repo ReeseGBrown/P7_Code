@@ -6,13 +6,14 @@ function Create() {
     const [postTitle, setPostTitle] = useState("");
     const [postContent, setPostContent] = useState("");
     const [testData, setTestData] = useState({});
-    
+    const testToken = localStorage.getItem("token");
     const submitFunction = (e) => {
         e.preventDefault();
         fetch('http://localhost:4000/api/posts/', {
             method: 'POST',
             headers: {
             'Content-Type': 'application/json',
+            'Authorization': "Bearer" + " " + testToken,
             },
             body: JSON.stringify({
                 post_title: postTitle,

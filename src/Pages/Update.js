@@ -8,15 +8,21 @@ function Update() {
     const [postContent, setPostContent] = useState("");
     const [testData, setTestData] = useState({});
     const { id } = useParams();
+    const testToken = localStorage.getItem("token");
 
     useEffect(() => {
         async function testGetter() {
             try {
-                const response = await fetch("http://localhost:4000/api/posts/" + id)
+                const response = await fetch("http://localhost:4000/api/posts/" + id , {
+                    headers: {
+                        'Authorization': "Bearer" + " " + testToken,
+                        
+                        }
+                })
                 const data = await response.json()
                 //console.log("data");
                 //console.log(data);
-                setTestData(data);
+                setTestData(data[0]);
                 //console.log("testData");
                 //console.log(testData);
             }
@@ -34,6 +40,7 @@ function Update() {
             method: 'PUT',
             headers: {
             'Content-Type': 'application/json',
+            'Authorization': "Bearer" + " " + testToken,
             },
             body: JSON.stringify({
                 post_title: postTitle,
